@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Quote Generator</title>
+
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="author" content="Sameeha Rahman">
+
+    <style>
+        .btn {
+            font-size: 1.5em;
+        }
+
+        #quoteList {
+            list-style-type: none;
+            padding: 0;
+            padding-top: 20px;
+        }
+
+        #quoteList li {
+            border: 1px solid black;
+            border-radius: 10px;
+            padding: 10px;
+            margin: 5px;
+        }
+    </style>
+
+</head>
+
+<body>
+
+    <div class="jumbotron jumbotron-fluid text-center">
+        <h1 class="display-4">Poetry Quote Generator</h1>
+        <p class="lead">Fill the form then click the button below! <br> Alternatively, type 'getMultipleQuotes(quoteType, quoteNum)' where quoteType = 'haiku' or 'tercet' and quoteNum between 1 and 5 on the console!</p>
+    </div>
+    <div class="container-fluid text-center">
+        <div class="row">
+            <div class="col-md-6 offset-md-3">
+                <form id="quoteForm">
+                    <div class="form-row" style="padding-bottom: 20px;">
+                        <div class="col-6">
+                            <label class="sr-only" for="quoteNum">Number of Quotes</label>
+                            <input type="number" name="quoteNum" id="quoteNum" class="form-control" min="1" max="5" value="1" placeholder="Number of Quotes" required>
+                        </div>
+                        <div class="col-6">
+                            <label class="sr-only" for="quoteType">Quote Type</label>
+                            <select class="form-control" name="quoteType" id="quoteType" required>
+                                <option value="haiku">Haiku</option>
+                                <option value="tercet">Tercet</option>
+                            </select>
+                        </div>
+                    </div>
+                    <button class="btn btn-primary" id="generate" onclick="generateQuoteList()">Go!</button>
+                    <button class="btn btn-secondary d-none" id="clear" onclick="clearCycle()">Stop!</button>
+                </form>
+            </div>
+        </div>
+        <div class="row">
+            <div class="col-md-4 offset-md-4">
+                <ul id="quoteList" class="text-left"></ul>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js"></script>
+
+    <script src="pr5_02_quote.js"></script>
+</body>
+
+</html>
